@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     test.vm.box = "centos/7"
     test.vm.hostname = "voffka.box"
     test.vm.network :private_network, ip: "192.168.255.42"
-
+    test.vm.network :public_network, bridge: "en0: Wi-Fi (AirPort)", use_dhcp_assigned_default_route: true
 
     test.vm.provision "shell", inline: $script
   end
